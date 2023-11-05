@@ -179,23 +179,23 @@ void loop() {
   lcd.print("newVal: ");
   lcd.print(value);
 
-//  if (b != ClickEncoder::Open) {
-//    lcd.setCursor(0,3);
-//    Serial.print("Button: ");
-//    #define VERBOSECASE(label) case label: lcd.print(#label); break;
-//    switch (b) {
-//      VERBOSECASE(ClickEncoder::Pressed);
-//      VERBOSECASE(ClickEncoder::Held)
-//      VERBOSECASE(ClickEncoder::Released)
-//      VERBOSECASE(ClickEncoder::Clicked)
-//      case ClickEncoder::DoubleClicked:
-//          lcd.print("ClickEncoder::DoubleClicked");
-//          //encoder->setAccelerationEnabled(!encoder->getAccelerationEnabled());
-//          //Serial.print("  Acceleration is ");
-//          //Serial.println((encoder->getAccelerationEnabled()) ? "enabled" : "disabled");
-//        break;
-//    }
-//  }    
+ if (b != ClickEncoder::Open) {
+   lcd.setCursor(0,3);
+   Serial.print("Button: ");
+   #define VERBOSECASE(label) case label: lcd.print(#label); break;
+   switch (b) {
+     VERBOSECASE(ClickEncoder::Pressed);
+     VERBOSECASE(ClickEncoder::Held)
+     VERBOSECASE(ClickEncoder::Released)
+     VERBOSECASE(ClickEncoder::Clicked)
+     case ClickEncoder::DoubleClicked:
+         lcd.print("ClickEncoder::DoubleClicked");
+         //encoder->setAccelerationEnabled(!encoder->getAccelerationEnabled());
+         //Serial.print("  Acceleration is ");
+         //Serial.println((encoder->getAccelerationEnabled()) ? "enabled" : "disabled");
+       break;
+   }
+ }    
   
   delay(200);
 }
